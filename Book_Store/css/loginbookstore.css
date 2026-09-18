@@ -191,7 +191,6 @@ body {
 }
 
 .remember input[type="checkbox"] {
-    appearance: none;
     width: 16px;
     height: 16px;
     border: 2px solid var(--secondary-text);
