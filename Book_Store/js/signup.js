@@ -1,4 +1,3 @@
-// --- Theme toggle (dark/light) ---
 const savedTheme = localStorage.getItem("theme") || "light";
 document.documentElement.setAttribute("data-theme", savedTheme);
 
@@ -25,7 +24,6 @@ function updateThemeButton(theme) {
     }
 }
 
-// --- Sign up form ---
 const form = document.getElementById("signup-form");
 const email = document.getElementById("email");
 const password = document.getElementById("password");
@@ -35,15 +33,12 @@ const passwordError = document.getElementById("password-error");
 const confirmPasswordError = document.getElementById("confirm-password-error");
 const submitBtn = document.querySelector(".signin-btn");
 
-// Same regex rules as login.js — keep both files in sync if you change one.
 
-// Email: letters/numbers, then "@", then letters/numbers, then ".com" or ".org".
 function isValidEmail(value) {
     return /^[A-Za-z0-9]+@[A-Za-z0-9]+\.(com|org)$/.test(value);
 }
 
-// Password: needs an uppercase letter, a lowercase letter, a number, and a special
-// character. Four small, separate checks instead of one long regex.
+
 function hasUpper(value) {
     return /[A-Z]/.test(value);
 }
@@ -81,13 +76,11 @@ form.addEventListener("submit", function (e) {
 
     let hasError = false;
 
-    // trim the email field itself so the box, the check, and what gets saved all match
     email.value = email.value.trim();
     const emailVal = email.value;
     const passwordVal = password.value;
     const confirmPasswordVal = confirmPassword.value;
 
-    // --- Email checks ---
     if (emailVal === "") {
         showError(email, emailError, "Please enter your email.");
         hasError = true;
@@ -96,7 +89,6 @@ form.addEventListener("submit", function (e) {
         hasError = true;
     }
 
-    // --- Password checks ---
     if (passwordVal === "") {
         showError(password, passwordError, "Please enter your password.");
         hasError = true;
@@ -117,9 +109,6 @@ form.addEventListener("submit", function (e) {
         hasError = true;
     }
 
-    // --- Confirm password check ---
-    // Only bother checking this if the password itself already passed —
-    // no point telling them "doesn't match" when the password is invalid anyway.
     if (!hasError) {
         if (confirmPasswordVal === "") {
             showError(confirmPassword, confirmPasswordError, "Please confirm your password.");
@@ -134,8 +123,7 @@ form.addEventListener("submit", function (e) {
 
     submitBtn.disabled = true;
 
-    // Demo storage — one "user" object in localStorage, matching what login.js
-    // reads. Replace this with a real API call once the backend is ready.
+
     const userData = {
         email: emailVal,
         password: passwordVal
