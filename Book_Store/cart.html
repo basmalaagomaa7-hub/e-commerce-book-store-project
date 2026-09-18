@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Book Store - Cart & Payment</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/cart.css">
+</head>
+<body>
+    <header class="navbar">
+        <a href="index.html" class="logo">Book Store</a>
+        <nav>
+            <a href="index.html">Home</a>
+            <a href="books.html">Books</a>
+            <a href="cart.html" class="active">Cart</a>
+            <a href="login.html">Login</a>
+        </nav>
+        <button id="theme-toggle" class="theme-toggle" type="button">🌙</button>
+    </header>
+
+    <main class="cart-page">
+        <section class="page-heading">
+            <h1>My Cart</h1>
+            <p>Review your selected books before payment.</p>
+        </section>
+
+        <div class="cart-layout">
+            <section class="cart-section">
+                <div class="section-title-row">
+                    <h2>Selected Books</h2>
+                    <span id="cart-count">0 items</span>
+                </div>
+
+                <div id="cart-items" class="cart-items"></div>
+
+                <div id="empty-cart" class="empty-cart hidden">
+                    <h3>Your cart is empty</h3>
+                    <p>Go to the Books page and add a book first.</p>
+                    <a href="books.html" class="btn primary-btn">Browse Books</a>
+                </div>
+            </section>
+
+            <aside class="order-summary">
+                <h2>Order Summary</h2>
+                <div class="summary-row"><span>Subtotal</span><span id="subtotal">$0.00</span></div>
+                <div class="summary-row"><span>Shipping</span><span id="shipping">$5.00</span></div>
+                <div class="summary-divider"></div>
+                <div class="summary-row total-row"><span>Total</span><span id="total">$5.00</span></div>
+                <button id="checkout-btn" class="btn primary-btn checkout-btn" type="button">
+                    Continue to Payment
+                </button>
+            </aside>
+        </div>
+
+        <section id="payment-section" class="payment-section">
+            <div class="section-title-row">
+                <div>
+                    <h2>Payment</h2>
+                    <p>Enter your payment details to complete your order.</p>
+                </div>
+            </div>
+
+            <form id="payment-form" class="payment-form">
+                <div class="form-group">
+                    <label for="card-name">Cardholder Name</label>
+                    <input type="text" id="card-name" placeholder="Enter cardholder name" required>
+                </div>
+
+                <div class="form-group">
+                    <label for="card-number">Card Number</label>
+                    <input type="text" id="card-number" placeholder="1234 5678 9012 3456"
+                           maxlength="19" required>
+                </div>
+
+                <div class="form-row">
+                    <div class="form-group">
+                        <label for="expiry">Expiry Date</label>
+                        <input type="text" id="expiry" placeholder="MM/YY" maxlength="5" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="cvv">CVV</label>
+                        <input type="password" id="cvv" placeholder="123" maxlength="3" required>
+                    </div>
+                </div>
+
+                <button class="btn primary-btn pay-btn" type="submit">Pay Now</button>
+                <p id="payment-message" class="payment-message"></p>
+            </form>
+        </section>
+    </main>
+
+    <footer class="footer"><p>© 2026 Book Store</p></footer>
+
+    <script src="js/theme.js"></script>
+    <script src="js/cart.js"></script>
+</body>
+</html>
