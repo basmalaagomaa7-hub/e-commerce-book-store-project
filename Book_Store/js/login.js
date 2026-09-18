@@ -1,4 +1,3 @@
-// --- Theme toggle (dark/light) ---
 const savedTheme = localStorage.getItem("theme") || "light";
 document.documentElement.setAttribute("data-theme", savedTheme);
 
@@ -25,7 +24,6 @@ function updateThemeButton(theme) {
     }
 }
 
-// --- Login form ---
 const form = document.getElementById("login-form");
 const email = document.getElementById("email");
 const password = document.getElementById("password");
@@ -33,22 +31,12 @@ const emailError = document.getElementById("email-error");
 const passwordError = document.getElementById("password-error");
 const submitBtn = document.querySelector(".signin-btn");
 
-// --- Regex checks, explained ---
-// Email: letters/numbers, then "@", then letters/numbers, then ".com" or ".org".
-//   ^[A-Za-z0-9]+   -> one or more letters or digits (the part before "@", e.g. "yassin123")
-//   @               -> a literal "@"
-//   [A-Za-z0-9]+    -> one or more letters or digits (the domain name, e.g. "gmail")
-//   \.              -> a literal "."
-//   (com|org)$      -> the ending must be exactly "com" or "org"
-// Note: this is intentionally strict — it will reject dots/dashes before the "@"
-// (like "first.last@x.com") and any ending other than .com/.org (like .net, .edu, .eg).
+
 function isValidEmail(value) {
     return /^[A-Za-z0-9]+@[A-Za-z0-9]+\.(com|org)$/.test(value);
 }
 
-// Password: needs an uppercase letter, a lowercase letter, a number, and a special
-// character. Four small, separate checks — easier to follow and to edit individually
-// than one long regex trying to do all of it at once.
+
 function hasUpper(value) {
     return /[A-Z]/.test(value);
 }
@@ -74,7 +62,6 @@ function clearError(input, errorEl) {
     errorEl.style.display = "none";
 }
 
-// clear a field's error as soon as the user starts fixing it
 email.addEventListener("input", () => clearError(email, emailError));
 password.addEventListener("input", () => clearError(password, passwordError));
 
@@ -86,13 +73,11 @@ form.addEventListener("submit", function (e) {
 
     let hasError = false;
 
-    // trim the email field itself, not just a copy — so what's shown in the box,
-    // what gets compared, and what gets saved are all the same trimmed value
+
     email.value = email.value.trim();
     const emailVal = email.value;
     const passwordVal = password.value;
 
-    // --- Email checks ---
     if (emailVal === "") {
         showError(email, emailError, "Please enter your email.");
         hasError = true;
@@ -101,7 +86,6 @@ form.addEventListener("submit", function (e) {
         hasError = true;
     }
 
-    // --- Password checks ---
     if (passwordVal === "") {
         showError(password, passwordError, "Please enter your password.");
         hasError = true;
@@ -124,7 +108,6 @@ form.addEventListener("submit", function (e) {
 
     if (hasError) return;
 
-    // Disable the button briefly so a double-click can't submit the form twice
     submitBtn.disabled = true;
 
     const userDataString = localStorage.getItem("user");
