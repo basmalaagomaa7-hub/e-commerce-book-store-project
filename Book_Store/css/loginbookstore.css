@@ -190,18 +190,44 @@ body {
     cursor: pointer;
 }
 
-.remember input[type="checkbox"] {
-    width: 16px;
-    height: 16px;
-    border: 2px solid var(--secondary-text);
-    border-radius: 50%;
-    cursor: pointer;
-    transition: all 0.15s;
+/* Hide the real checkbox */
+.remember input {
+    display: none;
 }
 
-.remember input[type="checkbox"]:checked {
+/* Circle */
+.checkmark {
+    width: 18px;
+    height: 18px;
+    border: 2px solid var(--secondary-text);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.15s ease;
+    box-sizing: border-box;
+}
+
+/* Checkmark */
+.checkmark::after {
+    content: "";
+    width: 4px;
+    height: 8px;
+    border: solid white;
+    border-width: 0 2px 2px 0;
+    transform: rotate(45deg) scale(0);
+    transition: transform 0.15s ease;
+}
+
+/* Checked circle */
+.remember input:checked + .checkmark {
     background-color: var(--primary-color);
     border-color: var(--primary-color);
+}
+
+/* Show checkmark */
+.remember input:checked + .checkmark::after {
+    transform: rotate(45deg) scale(1);
 }
 
 .forgot-password {
