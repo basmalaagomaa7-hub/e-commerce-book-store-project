@@ -53,8 +53,26 @@ body {
 .search-box i { position: absolute; left: 12px; top: 50%; transform: translateY(-50%); color: var(--home-muted); font-size: 0.85rem; }
 .search-box input { width: 130px; padding: 0.55rem 1rem 0.55rem 2.2rem; background: var(--home-white); border: 1px solid #E7D8C8; border-radius: 20px; outline: none; font-family: inherit; font-size: 0.8rem; color: var(--home-text); }
 
-.theme-toggle { border: 1px solid #E7D8C8; border-radius: 50%; width: 36px; height: 36px; cursor: pointer; background: var(--home-white); color: var(--home-text); }
+.theme-toggle {
+    background-color: transparent;
+    border: none;
+    padding: 0;
+    margin: 0;
+    cursor: pointer;
+    color: var(--home-text);
+    font: inherit;
+    display: flex;
+    align-items: center;
+    gap: 6px;
+}
 
+.theme-toggle i {
+    color: var(--home-primary);
+}
+
+.theme-toggle span {
+    pointer-events: none;
+}
 .hero-section { display: flex; justify-content: space-between; align-items: center; max-width: 1350px; margin: 0 auto; padding: 3rem 6% 4rem; min-height: 75vh; gap: 2rem; }
 .hero-content { flex: 1; max-width: 520px; }
 .hero-content h2 { font-family: 'Caveat', cursive; font-size: 4.4rem; line-height: 1.05; color: var(--home-text); margin-bottom: 1.2rem; font-weight: 700; }
