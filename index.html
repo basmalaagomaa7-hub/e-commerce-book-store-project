@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Book Store</title>
+    
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Caveat:wght@600;
+      700&family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    
+    <!-- FontAwesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/
+    6.4.0/css/all.min.css">
+    
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <!-- Header Section -->
+    <header class="site-header">
+        <!--LOGO-->
+        <div class="logo-container">
+            <img src="logo (3).jpeg" alt="Logo">
+            <div class="logo-text">
+                <h1> Book Store</h1>
+                <p class="tagline">OPEN A BOOK • GROW A MIND</p>
+            </div>
+        </div>
+
+        <!-- Navigation Links -->
+        <nav class="nav-links">
+            <ul>
+                
+                <li><a href="books.html">Library</a></li>
+                <li>
+                    <a href="cart.html" class="basket-link">
+                        Basket <span id="cartCount" class="cart-badge">0</span>
+                    </a>
+                </li>
+                <li><a href="#orders">My Orders</a></li>
+                <li><a href="login.html">My Account</a></li>
+            </ul>
+            <div class="search-box">
+                <i class="fa-solid fa-magnifying-glass"></i>
+                <input type="text" id="searchInput" placeholder="Search...">
+            </div>
+        </nav>
+    </header>
+
+    <!-- Hero Section -->
+    <main class="hero-section">
+        <div class="hero-content">
+            <h2>Discover Your<br>Next Favorite Book</h2>
+            <p class="hero-description">
+                Browse thousands of books from different categories, discover new authors, and build your personal library.
+            </p>
+            <a href="books.html" class="browse-btn">Browse Books</a>
+        </div>
+        
+        <div class="hero-image-container">
+            <img src="/book.jpeg" alt="book">
+        </div>
+    </main>
+
+    <script src="main.js"></script>
+</body>
+</html>
