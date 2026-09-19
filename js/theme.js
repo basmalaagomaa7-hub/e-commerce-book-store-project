@@ -21,6 +21,19 @@ if (themeButton) {
 
 function updateThemeButton(theme) {
     if (themeButton) {
-        themeButton.textContent = theme === "dark" ? "☀️" : "🌙";
+        const icon = themeButton.querySelector("i");
+        const text = themeButton.querySelector("span");
+
+        if (icon) {
+            icon.className = theme === "dark"
+                ? "fa-solid fa-sun"
+                : "fa-solid fa-moon";
+        }
+
+        if (text) {
+            text.textContent = theme === "dark"
+                ? "Light Mode"
+                : "Dark Mode";
+        }
     }
 }
