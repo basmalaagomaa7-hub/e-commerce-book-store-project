@@ -106,59 +106,165 @@
 
 
     <style>
-    #categories {
-        border-right: 3px solid var(--borders);
+   #categories {
+    border-right: 3px solid var(--borders);
+}
+
+#categories p {
+    padding: 8px;
+    margin: 5px 0;
+    cursor: pointer;
+    width: fit-content;
+}
+
+#categories p:hover {
+    background-color: var(--primary-color);
+    color: var(--cards);
+    border-radius: 10px;
+}
+
+#main {
+    display: grid;
+    grid-template-columns: 180px 1fr;
+    gap: 30px;
+    direction: ltr;
+    padding: 25px 30px;
+}
+
+#books {
+    min-width: 0;
+}
+
+#books h2 {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+#book-list {
+    display: grid;
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+    gap: 20px;
+}
+
+.book {
+    border: 3px solid var(--borders);
+    background-color: var(--cards);
+    padding: 10px;
+    text-align: center;
+    border-radius: 10px;
+}
+
+.book img {
+    width: 100%;
+    max-width: 150px;
+    height: 250px;
+    object-fit: contain;
+}
+
+.button {
+    background-color: var(--primary-color);
+    color: var(--cards);
+    border: none;
+    padding: 7px 12px;
+    cursor: pointer;
+    border-radius: 10px;
+}
+
+/* Tablet */
+@media (max-width: 1000px) {
+    #book-list {
+        grid-template-columns: repeat(3, minmax(0, 1fr));
+    }
+}
+
+/* Small tablet */
+@media (max-width: 750px) {
+    #header {
+        flex-wrap: wrap;
+        gap: 15px;
+        padding: 15px 20px;
     }
 
-    #categories p {
-        padding: 8px;
-        margin: 5px 0;
-        cursor: pointer;
-        width: fit-content;
+    #search-bar {
+        position: static;
+        transform: none;
+        order: 3;
+        width: 100%;
+        text-align: center;
     }
 
-    #categories p:hover {
-        background-color: var(--primary-color);
-        color: var(--cards);
-        border-radius: 10px;
+    #Search {
+        width: min(100%, 350px);
+    }
+
+    #Basics {
+        margin-left: auto;
     }
 
     #main {
-        display: grid;
-        grid-template-columns: 180px 1fr;
-        gap: 30px;
-        direction: ltr;
+        grid-template-columns: 1fr;
+        padding: 20px;
     }
-    #books {
-        min-width: 0;
+
+    #categories {
+        border-right: none;
+        border-bottom: 3px solid var(--borders);
+        padding-bottom: 10px;
+        display: flex;
+        flex-wrap: wrap;
+        align-items: center;
+        gap: 5px;
     }
-    #books h2 {
-        text-align: center;
+
+    #categories h4 {
+        width: 100%;
     }
+
+    #categories p {
+        margin: 0;
+    }
+
     #book-list {
-        display: grid;
-        grid-template-columns: repeat(4, 1fr);
-        gap: 20px;
+        grid-template-columns: repeat(2, minmax(0, 1fr));
     }
+}
+
+/* Phone */
+@media (max-width: 500px) {
+    #header {
+        padding: 12px 15px;
+    }
+
+    #logo {
+        font-size: 20px;
+    }
+
+    #Basics p {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 8px;
+        line-height: 1.8;
+    }
+
+    #main {
+        padding: 15px;
+    }
+
+    #book-list {
+        grid-template-columns: 1fr;
+        gap: 15px;
+    }
+
     .book {
-        border: 3px solid var(--borders);
-        background-color: var(--cards);
-        padding: 10px;
-        text-align: center;
+        width: 100%;
     }
+
     .book img {
-        width: 150px;
-        height: 250px;
-        object-fit: contain;
+        max-width: 140px;
+        height: 220px;
     }
-    .button {
-        background-color: var(--primary-color);
-        color: var(--cards);
-        border: none;
-        padding: 5px 10px;
-        cursor: pointer;
-        border-radius: 10px;
-    }
+}
     </style>
 </head>
 
