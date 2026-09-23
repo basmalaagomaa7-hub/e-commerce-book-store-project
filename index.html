@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BookSpot</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Caveat:wght@600;700&family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
+    <link rel="stylesheet" href="css/home.css">
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+    <header class="site-header">
+        <a href="index.html" class="logo-container">
+            <i class="fa-solid fa-book-open logo-icon"></i>
+            <div class="logo-text">
+                <h1>BookSpot</h1>
+                <p class="tagline">OPEN A BOOK • GROW A MIND</p>
+            </div>
+        </a>
+
+        <nav class="nav-links">
+            <ul>
+                <li><i class="fa-solid fa-house"></i><a href="index.html">Home</a></li>
+                <li><i class="fa-brands fa-leanpub"></i><a href="books.html">Books</a></li>
+                <li><i class="fa-solid fa-tag"></i><a href="books.html?filter=Offers">Offers</a></li>
+                <li><i class="fa-solid fa-cart-shopping"></i><a href="cart.html">Cart <span id="cartCount" class="cart-badge">0</span></a></li>
+                <li id="auth-area"><i class="fa-regular fa-circle-user"></i><a href="sign-up.html">Sign Up</a> | <i class="fa-solid fa-right-to-bracket"></i><a href="login.html">Login</a></li>
+            </ul>
+            <div class="search-box">
+                <i class="fa-solid fa-magnifying-glass"></i>
+                <input type="text" id="searchInput" placeholder="Search...">
+            </div>
+           <button id="theme-toggle" class="theme-toggle" type="button">
+             <i class="fa-solid fa-moon"></i>
+             <span>Dark Mode</span>
+           </button>
+        </nav>
+    </header>
+
+    <main class="hero-section">
+        <div class="hero-content">
+            <h2>Discover Your<br>Next Favorite Book</h2>
+            <p class="hero-description">
+                Browse thousands of books from different categories, discover new authors, and build your personal library.
+            </p>
+            <a href="books.html" class="browse-btn">Browse Books</a>
+        </div>
+
+        <div class="hero-image-container">
+            <img src="assets/images/book.jpeg" alt="Book">
+        </div>
+    </main>
+
+    <script src="js/theme.js"></script>
+    <script src="js/home.js"></script>
+    <script src="js/auth.js"></script>
+</body>
+</html>
